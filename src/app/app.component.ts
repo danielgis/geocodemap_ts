@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'geocodemap';
+  titleSidebar: string;
+
+  sendTitleSidebar(param: string){
+    this.titleSidebar = param;
+  }
 }

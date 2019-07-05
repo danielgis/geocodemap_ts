@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,13 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  @Output() titleFromNav  = new EventEmitter();
+  
   constructor() { }
 
   ngOnInit() {
   }
 
-  openTOC(){
+  openSideBar(e){
     document.getElementById("idSidenav").style.width = "350px";
+    this.titleFromNav.emit(e.target.innerHTML);
   }
-
 }
