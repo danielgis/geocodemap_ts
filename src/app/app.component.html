@@ -3,7 +3,10 @@
       <app-navbar (widgetFromNav)=sendWidgetSidebar($event)></app-navbar>
   </div>
   <div class="row">
-    <app-sidebar [titleSidebar]="titleSidebar" [contentWidget]="contentWidget"></app-sidebar>
+    <app-sidebar [titleSidebar]="titleSidebar">
+        <ng-template [ngIf]="titleSidebar == 'TOC'"><app-toc></app-toc></ng-template>
+        <ng-template [ngIf]="titleSidebar == 'Analyst'"><app-analyst></app-analyst></ng-template>
+    </app-sidebar>
 		<app-map></app-map>
   </div>
   <router-outlet></router-outlet>

@@ -2,14 +2,13 @@
 	<div class="container">
 			<div class="row">
 					<div class="col-10">
-							{{ titleSidebar }}
+						{{ titleSidebar }}
 					</div>
 					<div class="col-2 text-right">
 							<a href="#" class="closebtn" (click)="closeSideBar()">&times;</a>
 					</div>
 			</div>
 			<hr>
-			<!-- Agregar componentes HTML -->
-			{{ contentWidget }}
+			<ng-content></ng-content>
 	</div>	
 </div>
