@@ -8,8 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'geocodemap';
   titleSidebar: string;
+  contentWidget: any;
 
-  sendTitleSidebar(param: string){
-    this.titleSidebar = param;
+  sendWidgetSidebar(param: any){
+    this.titleSidebar = param.title;
+    this.contentWidget = param.content;
+    console.log(this.contentWidget);
   }
 }

@@ -7,7 +7,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  @Output() titleFromNav  = new EventEmitter();
+  @Output() widgetFromNav  = new EventEmitter();
+  // @Output() widgetFromNav  = new EventEmitter();
   
   constructor() { }
 
@@ -15,7 +16,16 @@ export class NavbarComponent implements OnInit {
   }
 
   openSideBar(e){
+    let response = {
+      title: e.target.innerHTML,
+      content: ''
+    }
     document.getElementById("idSidenav").style.width = "350px";
-    this.titleFromNav.emit(e.target.innerHTML);
+    if (response.title == 'TOC'){
+      response.content = '<app-toc></app-toc>'
+    } else {
+      response.content = '<app-analyst><app-analyst>'
+    }
+    this.widgetFromNav.emit(response);
   }
 }

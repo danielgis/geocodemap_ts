@@ -1,9 +1,9 @@
 <div class="container-fluid">
   <div class="row-fluid menu">
-      <app-navbar (titleFromNav)=sendTitleSidebar($event)></app-navbar>
+      <app-navbar (widgetFromNav)=sendWidgetSidebar($event)></app-navbar>
   </div>
   <div class="row">
-    <app-sidebar [titleSidebar]="titleSidebar"></app-sidebar>
+    <app-sidebar [titleSidebar]="titleSidebar" [contentWidget]="contentWidget"></app-sidebar>
 		<app-map></app-map>
   </div>
   <router-outlet></router-outlet>
