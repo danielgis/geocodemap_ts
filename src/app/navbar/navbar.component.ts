@@ -20,7 +20,10 @@ export class NavbarComponent implements OnInit {
       title: e.target.innerHTML,
       content: ''
     }
+    
     document.getElementById("idSidenav").style.width = "350px";
+    document.getElementById("mainContainerApp").style.marginLeft = "350px";
+    document.getElementById("mainContainerApp").style.width = "calc(100vw - 350px)";
     if (response.title == 'TOC'){
       response.content = '<app-toc></app-toc>'
     } else {

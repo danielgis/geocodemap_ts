@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent implements OnInit {
   @Input() titleSidebar: string;
@@ -16,6 +16,7 @@ export class SidebarComponent implements OnInit {
 
   closeSideBar(){
     document.getElementById("idSidenav").style.width = "0";
+    document.getElementById("mainContainerApp").style.marginLeft = "0";
+    document.getElementById("mainContainerApp").style.width = "100%";
   }
-
 }
