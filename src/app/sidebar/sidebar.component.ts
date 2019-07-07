@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   @Input() titleSidebar: string;
-  @Input() contentWidget: any;
+  @Input() toggleSidebar: boolean;
+  @Output() toggleSidebarFalse = new EventEmitter();
 
   constructor() { }
 
@@ -15,8 +16,7 @@ export class SidebarComponent implements OnInit {
   }
 
   closeSideBar(){
-    document.getElementById("idSidenav").style.width = "0";
-    document.getElementById("mainContainerApp").style.marginLeft = "0";
-    document.getElementById("mainContainerApp").style.width = "100%";
+    this.toggleSidebar = false;
+    this.toggleSidebarFalse.emit(this.toggleSidebar);
   }
 }

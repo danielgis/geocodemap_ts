@@ -1,9 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body{
+body{
     padding: 0;
     margin: 0;
     height: 100%;
     width: 100%;
     background-color: #f8f9fa;
+}
+
+
+app-root{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100vh;
 }

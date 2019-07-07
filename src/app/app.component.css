@@ -1,4 +1,17 @@
 app-map{
     width: 100%;
-    transition: 0.1s;
+}
+
+.cf{
+    width: 100%;
+}
+
+.sb{
+    display: none;
+    height: 100%;
+}
+
+.sb-active{
+    width: 400px;
+    overflow-x: hidden;
 }

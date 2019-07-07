@@ -8,11 +8,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'geocodemap';
   titleSidebar: string;
-  contentWidget: any;
+  toggleSidebar: boolean = false;
+  idWidget: number;
 
   sendWidgetSidebar(param: any){
     this.titleSidebar = param.title;
-    this.contentWidget = param.content;
-    console.log(this.contentWidget);
+    this.toggleSidebar = param.toggle;
+    this.idWidget = param.id;
+  }
+
+  closeSideBar(toggle: boolean){
+    this.toggleSidebar = toggle;
   }
 }

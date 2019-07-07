@@ -1,13 +1,14 @@
-<div class="container-fluid" id="mainContainerApp">
+<app-sidebar [titleSidebar]="titleSidebar" [toggleSidebar]="toggleSidebar" (toggleSidebarFalse)=closeSideBar($event) 
+  [ngClass]="toggleSidebar ? 'sb-active' : 'sb'">
+    <ng-template [ngIf]="idWidget == 1"><app-toc></app-toc></ng-template>
+    <ng-template [ngIf]="idWidget == 2"><app-analyst></app-analyst></ng-template>
+</app-sidebar>
+<div class="container-fluid cf-active">
   <div class="row-fluid menu">
       <app-navbar (widgetFromNav)=sendWidgetSidebar($event)></app-navbar>
   </div>
-  <app-sidebar [titleSidebar]="titleSidebar">
-      <ng-template [ngIf]="titleSidebar == 'TOC'"><app-toc></app-toc></ng-template>
-      <ng-template [ngIf]="titleSidebar == 'Analyst'"><app-analyst></app-analyst></ng-template>
-  </app-sidebar>
   <div class="row">
-		<app-map></app-map>
+		<app-map [toggleSidebarFromMap]="toggleSidebar"></app-map>
   </div>
   <router-outlet></router-outlet>
 </div>

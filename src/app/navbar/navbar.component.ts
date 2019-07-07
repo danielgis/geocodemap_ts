@@ -8,27 +8,28 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   @Output() widgetFromNav  = new EventEmitter();
-  // @Output() widgetFromNav  = new EventEmitter();
   
   constructor() { }
 
   ngOnInit() {
   }
 
-  openSideBar(e){
+  openSideBar(e: { target: { innerHTML: any; parentElement: { value: any; }; }; }){
+    // console.log(e.target.parentElement.value);
     let response = {
       title: e.target.innerHTML,
-      content: ''
+      id: e.target.parentElement.value,
+      toggle:  true
     }
     
-    document.getElementById("idSidenav").style.width = "350px";
-    document.getElementById("mainContainerApp").style.marginLeft = "350px";
-    document.getElementById("mainContainerApp").style.width = "calc(100vw - 350px)";
-    if (response.title == 'TOC'){
-      response.content = '<app-toc></app-toc>'
-    } else {
-      response.content = '<app-analyst><app-analyst>'
-    }
+    // document.getElementById("idSidenav").style.width = "350px";
+    // document.getElementById("mainContainerApp").style.marginLeft = "350px";
+    // document.getElementById("mainContainerApp").style.width = "calc(100vw - 367px)";
+    // if (response.title == 'TOC'){
+    //   response.content = '<app-toc></app-toc>'
+    // } else {
+    //   response.content = '<app-analyst><app-analyst>'
+    // }
     this.widgetFromNav.emit(response);
   }
 }
