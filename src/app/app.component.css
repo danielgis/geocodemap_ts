@@ -16,3 +16,11 @@ app-map{
     width: 500px;
     overflow-x: hidden;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .sb-active{
+        width: 100%;
+        overflow-x: inherit;
+    }
+}
