@@ -1,4 +1,4 @@
-<app-sidebar [titleSidebar]="titleSidebar" [toggleSidebar]="toggleSidebar" (toggleSidebarFalse)=closeSideBar($event) 
+<app-sidebar [titleSidebar]="titleSidebar" (toggleSidebarFalse)=closeSideBar($event) 
   [ngClass]="toggleSidebar ? 'sb-active' : 'sb'">
     <ng-template [ngIf]="idWidget == 1"><app-toc></app-toc></ng-template>
     <ng-template [ngIf]="idWidget == 2"><app-analyst></app-analyst></ng-template>

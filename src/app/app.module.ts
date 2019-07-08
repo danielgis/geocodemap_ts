@@ -9,6 +9,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { TocComponent } from './toc/toc.component';
 import { AnalystComponent } from './analyst/analyst.component';
 import { AboutComponent } from './about/about.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap'; 
+
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { AboutComponent } from './about/about.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,25 @@
+.sbContainer{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.headWidget{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+strong{
+    color: #40514e;
+}
+
+.titleWgt{
+    width: 70%;
+}
+
+.optWgt{
+    width: 10%;
+    text-align: right;
+}

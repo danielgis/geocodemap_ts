@@ -1,14 +1,18 @@
-<div id="idSidenav" [ngClass]="toggleSidebar ? 'sidenav-active' : 'sidenav'">
-	<div class="container">
-		<div class="row">
-			<div class="col-10">
-				{{ titleSidebar }}
-			</div>
-			<div class="col-2 text-right">
-				<a href="#" class="closebtn" (click)="closeSideBar()">&times;</a>
-			</div>
-		</div>
+<div class="sbContainer">
+	<div class="headWidget">
+		<a class="titleWgt">
+			<strong>
+				<i class="fas fa-compass" style="color:#a1dd70;"></i>{{ " " + titleSidebar }}
+			</strong>
+		</a>
+		<a href="#" class="optWgt" ngbTooltip="Like!"><i class="fas fa-thumbs-up"></i></a>
+		<a href="#" class="optWgt" ngbTooltip="Information"><i class="fas fa-info-circle" style="color:#1cb3c8;"></i></a>
+		<a href="#" class="optWgt" ngbTooltip="Close" (click)="closeSideBar()"><i class="fas fa-times-circle" style="color:#f17e7e;"></i></a>
+	</div>
+	<div>
 		<hr>
-		<ng-content></ng-content>
-	</div>	
+	</div>
+	<div class="contentWidget">
+			<ng-content></ng-content>
+	</div>
 </div>

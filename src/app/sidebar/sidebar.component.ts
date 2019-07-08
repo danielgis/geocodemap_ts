@@ -7,7 +7,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   @Input() titleSidebar: string;
-  @Input() toggleSidebar: boolean;
   @Output() toggleSidebarFalse = new EventEmitter();
 
   constructor() { }
@@ -16,7 +15,6 @@ export class SidebarComponent implements OnInit {
   }
 
   closeSideBar(){
-    this.toggleSidebar = false;
-    this.toggleSidebarFalse.emit(this.toggleSidebar);
+    this.toggleSidebarFalse.emit(false);
   }
 }

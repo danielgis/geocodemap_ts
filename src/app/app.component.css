@@ -12,6 +12,7 @@ app-map{
 }
 
 .sb-active{
-    width: 400px;
+    border: solid 1px #DDD;
+    width: 500px;
     overflow-x: hidden;
 }
